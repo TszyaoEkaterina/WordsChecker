@@ -2,14 +2,14 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 public class WordsChecker {
-String text;
+    HashSet<String> words = new HashSet<>();
 
     public WordsChecker(String text) {
-        this.text = text;
-    }
-    public boolean hasWord(String word){
-        HashSet<String> words = new HashSet<>();
+        words.clear();
         words.addAll(Arrays.asList(text.split("\\P{IsAlphabetic}+")));
+    }
+
+    public boolean hasWord(String word) {
         return words.contains(word);
     }
 }
